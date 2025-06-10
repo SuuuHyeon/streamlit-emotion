@@ -6,8 +6,7 @@ from PIL import Image
 from utils import predict_emotion
 
 st.set_page_config(page_title="감정 분류기", layout="centered")
-
-st.title("😊 얼굴 감정 분류기")
+st.title("😊 얼굴 감정 분류기 (ONNX 기반)")
 st.write("얼굴이 포함된 이미지를 업로드하면 감정을 분석해드립니다.")
 
 uploaded_file = st.file_uploader("얼굴 이미지 업로드", type=["jpg", "jpeg", "png"])
