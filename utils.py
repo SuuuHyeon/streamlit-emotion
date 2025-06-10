@@ -33,12 +33,15 @@ def preprocess_image(image):
     else:
         x, y, w, h = faces[0]
         roi_gray = gray[y:y + h, x:x + w]
-        roi_gray = cv2.resize(roi_gray, (48, 48))
+        roi_gray = cv2.resize(roi_gray, (64, 64))  # ← 48 → 64 로 변경
         coords = (x, y, w, h)
 
     # 정규화 및 차원 조정
     roi_gray = roi_gray.astype("float32") / 255.0
-    roi_gray = np.expand_dims(roi_gray, axis=(0, -1))  # shape: (1, 48, 48, 1)
+    roi_gray = np.expand_dims(roi_gray, axis=(0, -1))  # (1, 64, 64, 1)
+    roi_gray = np.ascontiguousarray(roi_gray)          # ONNX 입력으로 안전하게
+
+    
 
     return roi_gray, coords
 
@@ -48,7 +51,7 @@ def predict_emotion(image):
         return "얼굴을 감지하지 못했습니다.", None
 
     input_name = session.get_inputs()[0].name
-    outputs = session.run(None, {input_name: processed_img})
+    outputs = session.run(None, {"input": processed_img})
     prediction = outputs[0]
 
     emotion = emotion_labels[np.argmax(prediction)]
