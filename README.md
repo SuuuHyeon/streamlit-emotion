@@ -3,7 +3,7 @@
 사용자가 업로드한 얼굴 이미지를 기반으로, 사전 학습된 딥러닝 모델을 통해 감정을 분류하는 웹 애플리케이션입니다.
 Streamlit을 통해 직관적인 UI로 누구나 쉽게 사용할 수 있습니다.
 
-![app-preview](./Users/suhyeon/Documents/streamlit-iris.png)
+![app-preview](./assets/preview.png)
 
 ---
 
