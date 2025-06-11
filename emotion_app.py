@@ -25,4 +25,4 @@ if uploaded_file is not None:
         x, y, w, h = coords
         cv2.rectangle(image_np, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
-    st.image(image_np, caption="업로드된 이미지", use_column_width=True)
+    st.image(image_np, caption="업로드된 이미지", use_container_width=True)
