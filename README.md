@@ -14,3 +14,6 @@ Streamlit을 통해 직관적인 UI로 누구나 쉽게 사용할 수 있습니�
 - 7가지 감정 라벨 분류 (Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral)
 - 감정 결과 시각화 및 얼굴 영역 박스 표시
 - Streamlit Cloud를 통한 웹 배포
+
+## 사용한 데이터 링크
+[https://www.kaggle.com/datasets/msambare/fer2013/code]
